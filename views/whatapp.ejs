@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/index.css">
+</head>
+<body>
+  <div class="whatsapp">
+    <div class="users">
+      <div class="user-nav">
+        <div class="dp"></div>
+        <div class="more"><i class="ri-more-2-fill"></i></div>
+        <div class="more-options">
+          <ul>
+            <li>New Group</li>
+            <li>New Community</li>
+            <li>Starred messages</li>
+            <li>Select chats</li>
+            <li>Settings</li>
+            <li>Logout</li>
+          </ul>
+        </div>
+      </div>
+      <div class="user-serch">
+        <i class="ri-search-2-line user-serch-icon"></i>
+        <input type="text" name="" placeholder="Search or start new chat" id="">
+      </div>
+      <div class="usernames"></div>
+    </div>
+    <div class="chats">
+      <div class="chat-nav">
+        <div class="chatusername-dp">
+          <div class="chat-dp"></div>
+          <h3>yash datir</h3>
+        </div>
+        <ul>
+          <li><i class="ri-vidicon-fill"></i></li>
+          <li><i class="ri-search-2-line"></i></li>
+          <li><i class="ri-more-2-fill"></i></li>
+        </ul>
+      </div>
+      
+      
+      <div class="messages">
+        <div class="incoming-msg msg">
+          <div class="username">yash datir</div>
+          <div class="msg-data">helliw hii hellooe</div>
+        </div>
+        <div class="outgoing-msg msg">
+          <div class="username">you</div>
+          <div class="msg-data">helliw hii hellooe</div>
+        </div>
+      </div>
+      <div class="send-btn">
+        <i class="ri-add-fill"></i>
+        <input id="newmsg" type="text" name="" placeholder="type a message" id="">
+        
+          <button onclick="sendmsg()"><i class="ri-send-plane-2-fill"></i></button>
+          
+            </div>
+
+    </div>
+  </div>
+
+  <script src="/javascripts/index.js"></script>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+      var socket = io();
+
+    // document.querySelector("button").addEventListener("click",function(){
+    //   var msg = document.querySelector("#newmsg").value
+    //   console.log(msg)
+    //   outgoing(msg)
+    // })
+  
+    function outgoing(msg){
+      document.querySelector(".messages").innerHTML += `<div class="outgoing-msg msg">
+          <div class="username">you</div>
+          <div class="msg-data">${msg}</div>
+        </div>`
+    }
+
+    function incoming(msg){
+      document.querySelector(".messages").innerHTML += `<div class="incoming-msg msg">
+          <div class="username">yash datir</div>
+          <div class="msg-data">${msg}</div>
+        </div>`
+    }
+
+    function sendmsg(){
+      var msg = document.querySelector("#newmsg").value
+      // var msgpacket = 
+      // {username: username,
+      //  msg: msg,
+      //  roomname:roomname }
+
+      outgoing(msg)
+      document.querySelector("#newmsg").value = ""
+      socket.emit("sending" , msg)
+    }
+
+    socket.on("resivemsg" , (msg)=>{
+      console.log(msg)
+      incoming(msg)
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    const more = document.querySelector(".more")
+const moreoption = document.querySelector(".more-options")
+var morecounter = 1
+more.addEventListener("click" , function(){
+    if(morecounter === 1){
+        moreoption.style.display="initial"
+        morecounter = 0
+    }else{
+        moreoption.style.display="none"
+        morecounter = 1
+    }
+})
+  </script>
+
+</body>
+</html>
