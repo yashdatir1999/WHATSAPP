@@ -1,0 +1,196 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+    font-family: sans-serif;
+}
+.whatsapp{
+    height: 100vh;
+    width: 100%;
+    background-color: pink;
+    display: flex;
+}
+.users{
+    height: 100vh;
+    width: 30%;
+    background-color: rgb(196, 119, 145);
+}
+.user-nav{
+    height: 10vh;
+    width: 100%;
+    background-color: paleturquoise;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1vmax;
+    
+}
+.dp{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: red;
+}
+.more >i{
+    font-size: 2vmax;
+}
+.more-options{
+    position: absolute;
+    left: 13%;
+    top: 7%;
+    /* height: 45vh; */
+    width: 15vw;
+    background-color: aqua;
+    z-index: 10;
+    display: none;
+    transition: all linear 2s;
+    padding: 1.7vmax;
+    border-radius: 0.5vmax;
+}
+.more-options >ul{
+    list-style: none;
+}
+.more-options >ul >li{
+    padding-bottom: 1vmax;
+    font-weight: 700;
+    font-size: 1.1vmax;
+}
+.user-serch{
+    height: 7vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: gray;
+    padding: 0 3vmax 0 0.7vmax;
+    /* margin: 0.3vmax 0; */
+}
+.user-serch >input{
+    padding: 0.6vmax 3vmax;
+    width: 100%;
+}
+.user-serch-icon{
+    transform: translateX(2vmax);
+}
+.usernames{
+    height: calc(100% - 17vh);
+    width: 100%;
+    background-color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.chats{
+    height: 100vh;
+    width: 70%;
+    background-color:rgb(34,46,53);
+}
+.chat-nav{
+    height: 10vh;
+    width: 100%;
+    background-color: orange;
+    padding: 0 1vmax;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.chatusername-dp{
+    height: 100%;
+    width: 30vw;
+    background-color: beige;
+    display: flex;
+    align-items: center;
+}
+.chat-dp{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: red;
+    margin-right: 1vmax;
+}
+.chatusername-dp >h3{
+    font-size: 1.2vmax;
+    text-transform: uppercase;
+}
+.chat-nav >ul{
+    list-style: none;
+    gap: 2vmax;
+    display: flex;
+    font-size: 1.5vmax;
+}
+.messages{
+    height: 80vh;
+    width: 100%;
+    background-color: greenyellow;
+    padding:0.2vmax 0.5vmax;
+}
+.send-btn{
+    height: 10vh;
+    width: 100%;
+    background-color: violet;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5vmax;
+    gap: 1vmax;
+}
+button{
+    border: none;
+    background-color: transparent;
+}
+button >i{
+    font-size: 2vmax;
+    font-weight: 700;
+}
+.send >i{
+    font-size: 2vmax;
+    font-weight: 700;
+}
+.send-btn >input{
+    padding: 0.8vmax;
+    width: 100%;
+    font-size: 1.1vmax;
+    outline: none;
+    border: none;
+}
+.msg{
+    background-color: wheat;
+    width: fit-content;
+    margin-bottom: 0.5vmax;
+}
+.username{
+    font-size: 1vmax;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    opacity: 0.7;
+}
+.msg-data{
+    font-size: 1.2vmax;
+    font-style: italic;
+    font-family: cursive;
+}
+.outgoing-msg{
+    margin-left: auto;
+}
