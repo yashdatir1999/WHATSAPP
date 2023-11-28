@@ -1,196 +1,118 @@
 *{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-html,body{
-    height: 100%;
-    width: 100%;
-    font-family: sans-serif;
+#container{
+  height: 100%;
+  width: 100%;
+  background-color: #cecbcb;
+  /* position: relative; */
 }
-.whatsapp{
-    height: 100vh;
-    width: 100%;
-    background-color: pink;
-    display: flex;
+#header{
+  height: 245px;
+  width: 100%;
+  background-color: #00bfa5;
+  display: flex;
+  padding-left: 200px;
+  padding-top: 15px;
+  position: absolute;
+  top: 0;
 }
-.users{
-    height: 100vh;
-    width: 30%;
-    background-color: rgb(196, 119, 145);
+#header img{
+  width: 35px;
+  height: 35px;
 }
-.user-nav{
-    height: 10vh;
-    width: 100%;
-    background-color: paleturquoise;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 1vmax;
-    
+#header h2{
+  color: #fff;
+  font-family:Segoe UI,Helvetica Neue,Helvetica,Lucida Grande,Arial,Ubuntu,Cantarell,Fira Sans,sans-serif; ;
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 8px;
+  margin-left: 16px;
 }
-.dp{
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    background-color: red;
+#center{
+  height: 80vh;
+  width: 70vw;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  /* margin-top: 50px; */
+  border-radius: 5px;
+  border: 1px solid#868181;
 }
-.more >i{
-    font-size: 2vmax;
-}
-.more-options{
-    position: absolute;
-    left: 13%;
-    top: 7%;
-    /* height: 45vh; */
-    width: 15vw;
-    background-color: aqua;
-    z-index: 10;
-    display: none;
-    transition: all linear 2s;
-    padding: 1.7vmax;
-    border-radius: 0.5vmax;
-}
-.more-options >ul{
-    list-style: none;
-}
-.more-options >ul >li{
-    padding-bottom: 1vmax;
-    font-weight: 700;
-    font-size: 1.1vmax;
-}
-.user-serch{
-    height: 7vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    background-color: gray;
-    padding: 0 3vmax 0 0.7vmax;
-    /* margin: 0.3vmax 0; */
-}
-.user-serch >input{
-    padding: 0.6vmax 3vmax;
-    width: 100%;
-}
-.user-serch-icon{
-    transform: translateX(2vmax);
-}
-.usernames{
-    height: calc(100% - 17vh);
-    width: 100%;
-    background-color: red;
+#box{
+  display: flex;
+  /* align-items: center; */
+  /* justify-content: space-between; */
+  color: #41525d;
+  padding: 56px 0 56px 56px;
+
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.chats{
-    height: 100vh;
-    width: 70%;
-    background-color:rgb(34,46,53);
+#box1 h1{
+  font-size: 35px;
+  color: #7c7a7a;
+  font-weight: 100;
+  font-family: Segoe UI,Helvetica Neue,Helvetica,Lucida Grande,Arial,Ubuntu,Cantarell,Fira Sans,sans-serif;
 }
-.chat-nav{
-    height: 10vh;
-    width: 100%;
-    background-color: orange;
-    padding: 0 1vmax;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    
+#para{
+  margin-top: 75px;
+  text-align: start;
 }
-.chatusername-dp{
-    height: 100%;
-    width: 30vw;
-    background-color: beige;
-    display: flex;
-    align-items: center;
+#para p{
+  font-size: 20px;
+  font-family:Segoe UI,Helvetica Neue,Helvetica,Lucida Grande,Arial,Ubuntu,Cantarell,Fira Sans,sans-serif ;
+  margin-top: 30px;
+  /* line-height: 1.5; */
+
 }
-.chat-dp{
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    background-color: red;
-    margin-right: 1vmax;
+#box2{
+  position: relative;
 }
-.chatusername-dp >h3{
-    font-size: 1.2vmax;
-    text-transform: uppercase;
+#box2 img{
+  width: 250px;
+  height: 250px;
+  /* margin: 50px 0 0 50px; */
+  margin-left: 5vmax;
 }
-.chat-nav >ul{
-    list-style: none;
-    gap: 2vmax;
-    display: flex;
-    font-size: 1.5vmax;
+#box2 #google{
+  position: absolute;
+  top: 92%;
+  left: 36%;
 }
-.messages{
-    height: 80vh;
-    width: 100%;
-    background-color: greenyellow;
-    padding:0.2vmax 0.5vmax;
+
+body {
+  text-align: center;
+  padding-top: 2rem;
 }
-.send-btn{
-    height: 10vh;
-    width: 100%;
-    background-color: violet;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 1.5vmax;
-    gap: 1vmax;
+
+form{
+  margin-top: -4vmax;
+  width: 80%;
+  transform: translateX(-14%);
 }
-button{
-    border: none;
-    background-color: transparent;
+form >input{
+  background-color: transparent;
+  padding: 0.5vmax;
+  border: none;
+  border-bottom: 0.1vmax solid black;
+  outline: none;
 }
-button >i{
-    font-size: 2vmax;
-    font-weight: 700;
+#password{
+  display: none;
 }
-.send-btn >i{
-    font-size: 2vmax;
-    font-weight: 700;
+form >button{
+  padding: 0.6vmax;
+  background-color: rgb(0,191,165);
+  border: none;
+  color: white;
+  font-weight: 700;
+  font-family: sans-serif;
+  font-size: 1.2vmax;
 }
-.send-btn >input{
-    padding: 0.8vmax;
-    width: 100%;
-    font-size: 1.1vmax;
-    outline: none;
-    border: none;
-}
-.msg{
-    background-color: wheat;
-    width: fit-content;
-    margin-bottom: 0.5vmax;
-}
-.username{
-    font-size: 1vmax;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 700;
-    opacity: 0.7;
-}
-.msg-data{
-    font-size: 1.2vmax;
-    font-style: italic;
-    font-family: cursive;
-}
-.outgoing-msg{
-    margin-left: auto;
+form >button:hover{
+  box-shadow: 0.3vmax 0.3vmax 0.3vmax rgba(0, 0, 0, 0.318);
 }
