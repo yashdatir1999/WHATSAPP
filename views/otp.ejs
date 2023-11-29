@@ -27,7 +27,7 @@
           </div>
         </div>
         <div id="box2">
-          <form style="position: absolute;top:80% ; display: flex; flex-direction: column; gap: 6px;left: 30%;" action="/user" method="post">
+          <form style="position: absolute;top:80% ; display: flex; flex-direction: column; gap: 6px;left: 30%;" action="/checkotp/<%= user._id%>" method="post">
             <input type="number" name="otp" placeholder="ENTER OTP" id="">
             <button>LOGIN</button>
           </form>

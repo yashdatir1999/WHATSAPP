@@ -13,5 +13,5 @@ const user = new mongoose.Schema({
     password: String
 })
 
-user.plugin(plm)
+user.plugin(plm,{usernameField: "mobile"})
 module.exports = mongoose.model("WHATSAPP USER" , user)
