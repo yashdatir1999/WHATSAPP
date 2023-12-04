@@ -1,3 +1,5 @@
+// const USER = require("./module/usermodel")
+
 const io = require( "socket.io" )();
 const socketapi = {
     io: io
@@ -7,7 +9,7 @@ const socketapi = {
 io.on( "connection", function( socket ) {
     console.log( "A user connected" );
 
-    socket.on("sending" , (msg) =>{
+    socket.on ("sending" , async(msg) =>{
         console.log(msg)
         socket.broadcast.emit("resivemsg" , msg)
     } )

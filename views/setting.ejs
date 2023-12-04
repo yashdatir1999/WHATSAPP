@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/setting.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+</head>
+<body>
+    
+<div class="setting">
+    <div class="setting-left">
+        <div class="user-nav">
+            <div class="dp"></div>
+            <div class="more"><i class="ri-more-2-fill"></i></div>
+            <div class="more-options">
+              <ul>
+                <li>New Group</li>
+                <li>New Community</li>
+                <li>Starred messages</li>
+                <li>Select chats</li>
+                <li><a href="/setting/<%= user._id%>">Setting</a></li>
+                <li><a href="/signout">Logout</a></li>
+              </ul>
+            </div>
+          </div>
+
+        <div class="user-settings">
+            <form action="" method="post">
+                <input type="number" name="mobile" placeholder="ENTER MOBILE NUMBER" id="">
+                <input type="text" name="username" placeholder="ENTER USER NAME" id="">
+                <input type="email" name="email" placeholder="ENTER EMAIL-ID" id="">
+                <button>Update</button>
+                
+                <a href="">Delete Account</a>
+            </form>
+        </div>  
+    </div>
+    <div class="setting-right">
+        <img src="/images/whatapp chat bg.png" alt="">
+        <h2>Download WhatApp for Windows</h2>
+        <h4>Make calls, share your screen and get a faster experiance when you download the <br> Windows app</h4>
+        <button>Get the app</button>
+    </div>
+</div>
+
+
+<script>
+    const more = document.querySelector(".more")
+const moreoption = document.querySelector(".more-options")
+var morecounter = 1
+more.addEventListener("click" , function(){
+    if(morecounter === 1){
+        moreoption.style.display="initial"
+        morecounter = 0
+    }else{
+        moreoption.style.display="none"
+        morecounter = 1
+    }
+})
+
+</script>
+</body>
+</html>

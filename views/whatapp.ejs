@@ -19,8 +19,8 @@
             <li>New Community</li>
             <li>Starred messages</li>
             <li>Select chats</li>
-            <li>Settings</li>
-            <li>Logout</li>
+            <li><a href="/setting/<%= user._id%>">Setting</a></li>
+            <li><a href="/signout">Logout</a></li>
           </ul>
         </div>
       </div>
@@ -34,7 +34,7 @@
       <div class="chat-nav">
         <div class="chatusername-dp">
           <div class="chat-dp"></div>
-          <h3>yash datir</h3>
+          <h3><%= user.username%></h3>
         </div>
         <ul>
           <li><i class="ri-vidicon-fill"></i></li>

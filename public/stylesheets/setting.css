@@ -1,0 +1,140 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+.setting{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    background-color: pink;
+}
+.setting-left{
+    height: 100vh;
+    width: 30%;
+    background-color: palevioletred;
+}
+.user-nav{
+    height: 10vh;
+    width: 100%;
+    background-color: paleturquoise;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1vmax;
+    
+}
+.dp{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: red;
+}
+.more >i{
+    font-size: 2vmax;
+}
+.more-options{
+    position: absolute;
+    left: 13%;
+    top: 7%;
+    /* height: 45vh; */
+    width: 15vw;
+    background-color: aqua;
+    z-index: 10;
+    display: none;
+    transition: all linear 2s;
+    padding: 1.7vmax;
+    border-radius: 0.5vmax;
+}
+.more-options >ul{
+    list-style: none;
+}
+.more-options >ul >li{
+    padding-bottom: 1vmax;
+    font-weight: 700;
+    font-size: 1.1vmax;
+}
+.user-settings{
+    height: 90vh;
+    width: 100%;
+    background-color: rgb(17,27,33);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.user-settings >form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.7vmax;
+    width: 80%;
+    /* background-color: rgb(192, 174, 209); */
+}
+.user-settings >form >input{
+    padding: 0.5vmax;
+    width: 100%;
+    border-radius: 0.7vmax;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: transparent;
+    border-bottom: 0.2vmax solid rgba(245, 245, 245, 0.786);
+}
+.user-settings >form >input::placeholder{
+    color: rgba(255, 255, 255, 0.737);
+}
+.user-settings >form >button{
+    padding: 0.7vmax 5vmax;
+    border-radius: 3vmax;
+    border: none;
+    color: rgba(245, 245, 245, 0.862);
+    background-color: transparent;
+    box-shadow: 0 0 0.2vmax whitesmoke;
+    transition: all linear 0.2s;
+}
+.user-settings >form >button:hover{
+    box-shadow: 0 0 0.4vmax whitesmoke;
+}
+.user-settings >form >a{
+    color: rgba(173, 216, 230, 0.857);
+    text-decoration: none;
+    margin-left: -16vmax;
+}
+.setting-right{
+    height: 100vh;
+    width: 70%;
+    background-color: rgb(34,46,53);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.5vmax;
+}
+.setting-right >img{
+    height: 40vh;
+}
+.setting-right >h2{
+    font-weight: 100;
+    font-family: sans-serif;
+    color: whitesmoke;
+}
+.setting-right >h4{
+    font-weight: 100;
+    font-family: sans-serif;
+    text-align: center;
+    color: whitesmoke;
+    font-size: 1vmax;
+    line-height: 1.5vmax;
+}
+.setting-right >button{
+    padding: 0.7vmax 2vmax;
+    border-radius: 3vmax;
+    border: none;
+    background-color: rgb(0,168,132);
+    font-weight: 100;
+}

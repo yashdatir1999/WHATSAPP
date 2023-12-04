@@ -1,36 +1,41 @@
 var express = require('express');
 var router = express.Router();
 
+// ///////////////  SOCKT io /////////////
+
+// const io = require( "socket.io" )();
+// const socketapi = {
+//     io: io
+// };
+
+// ///////////////  SOCKT io /////////////
+
+
 const USER = require("../module/usermodel")
 const passport = require("passport")
 const LocalStrategy = require("passport-local")
 passport.use(new LocalStrategy(USER.authenticate()))
 const nodemailer = require("nodemailer")
 /* GET home page. */
+
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
 router.post('/signin', async function(req, res, next) {
   try {
-        const alluser = await USER.find()
-        console.log(alluser)
-        alluser.forEach(async (u)=>{
-          if(u.mobile == req.body.mobile){
-              const user = u;
-            console.log(user)
-            otphendeler(req,res,user)
-          }else{
-            await USER.register({
+    const user = await USER.findOne({mobile: req.body.mobile})
+        if(!user){
+              await USER.register({
               mobile: req.body.mobile ,
               email: req.body.email,
               username: req.body.username
             }, req.body.password)
-            const user = await USER.findOne({mobile: req.body.mobile})
-            otphendeler(req,res,user)
-          }
-        })
-        
+            const newuser = await USER.findOne({mobile: req.body.mobile})
+            otphendeler(req,res,newuser)
+        }else{
+          otphendeler(req,res,user)
+        }
   
     // res.redirect("/otp")
   } catch (error) {
@@ -72,7 +77,20 @@ transport.sendMail(mailOptions, (err, info) => {
 
 router.post('/checkotp/:id', async function(req, res, next) {
   try {
-    res.render("whatapp")
+    const user = await USER.findById(req.params.id)
+    user.loginotp = -1
+    await user.save()
+    res.render("whatapp" , {user})
+  } catch (error) {
+    res.send(error)
+  }
+});
+
+
+router.get('/setting/:id', async function(req, res, next) {
+  try {
+    const user = await USER.findById(req.params.id)
+    res.render("setting" , {user})
   } catch (error) {
     res.send(error)
   }
@@ -83,31 +101,3 @@ router.post('/checkotp/:id', async function(req, res, next) {
 module.exports = router;
 
 
-
-// router.post('/signin', async function(req, res, next) {
-//   try {
-//         const alluser = await USER.find()
-//         console.log(alluser)
-//         alluser.forEach(async (u)=>{
-//           if(u.mobile == req.body.mobile){
-//               const user = u;
-//             console.log(user)
-//             otphendeler(req,res,user)
-//           }else{
-//             await USER.register({
-//               mobile: req.body.mobile ,
-//               email: req.body.email,
-//               username: req.body.username
-//             }, req.body.password)
-//             const user = await USER.findOne({mobile: req.body.mobile})
-//             otphendeler(req,res,user)
-//           }
-//         })
-        
-  
-//     // res.redirect("/otp")
-//   } catch (error) {
-//    res.send(error) 
-//   }
-//   });
-  

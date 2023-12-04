@@ -10,8 +10,8 @@ const user = new mongoose.Schema({
         type: Number,
         default: -1
     },
-    password: String
+
 })
 
 user.plugin(plm,{usernameField: "mobile"})
-module.exports = mongoose.model("WHATSAPP USER" , user)
+module.exports = mongoose.model("WHATSAPPUSER" , user)
