@@ -22,7 +22,7 @@ html,body{
 .user-nav{
     height: 10vh;
     width: 100%;
-    background-color: paleturquoise;
+    background-color: rgb(32,44,51);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -33,10 +33,11 @@ html,body{
     height: 50px;
     width: 50px;
     border-radius: 50%;
-    background-color: red;
+    background-color: goldenrod;
 }
 .more >i{
     font-size: 2vmax;
+    color: rgba(245, 245, 245, 0.847);
 }
 .more-options{
     position: absolute;
@@ -64,24 +65,57 @@ html,body{
     width: 100%;
     display: flex;
     align-items: center;
-    background-color: gray;
+    background-color: rgb(17,27,33);
     padding: 0 3vmax 0 0.7vmax;
     /* margin: 0.3vmax 0; */
 }
 .user-serch >input{
     padding: 0.6vmax 3vmax;
     width: 100%;
+    background-color: rgb(32,44,51);
+    outline: none;
+    color: whitesmoke;
+    border: none;
+    border: 0.3vmax;
+}
+.user-serch >input::placeholder{
+    color: rgba(245, 245, 245, 0.837);
 }
 .user-serch-icon{
     transform: translateX(2vmax);
+    color: rgba(245, 245, 245, 0.837);
 }
 .usernames{
     height: calc(100% - 17vh);
     width: 100%;
-    background-color: red;
+    background-color: rgb(17,27,33);
+    overflow-y: auto;
 }
-
-
+.usernames::-webkit-scrollbar{
+    display: none;
+}
+.usernames >ul >li{
+    /* background-color: paleturquoise; */
+    height: 9.5vh;
+    /* padding: 0.2vmax; */
+    display: flex;
+    align-items: center;
+    border-bottom: 0.1vmax solid rgba(245, 245, 245, 0.401);
+    margin-bottom: 0.2vmax;
+}
+.dps{
+    /* margin-bottom: 0.3vmax; */
+    height: 50px;
+    width: 50px;
+    background-color: blue;
+    border-radius: 50%;
+    margin-left: 1vmax;
+}
+.usernames >ul >li >h3{
+    margin-left: 1vmax;
+    text-transform: uppercase;
+    color: rgba(245, 245, 245, 0.841);
+}
 
 
 
@@ -109,17 +143,19 @@ html,body{
 .chat-nav{
     height: 10vh;
     width: 100%;
-    background-color: orange;
+    background-color: rgb(32,44,51);
     padding: 0 1vmax;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
+}
+.chat-nav >ul >li >i{
+    color: rgba(245, 245, 245, 0.736);
 }
 .chatusername-dp{
     height: 100%;
     width: 30vw;
-    background-color: beige;
+    /* background-color: beige; */
     display: flex;
     align-items: center;
 }
@@ -129,8 +165,18 @@ html,body{
     border-radius: 50%;
     background-color: red;
     margin-right: 1vmax;
+    border-radius: 50%;
+}
+.chat-dp >img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
 }
 .chatusername-dp >h3{
+    margin-left: 1vmax;
+    width: fit-content;
+    /* background-color: red; */
     font-size: 1.2vmax;
     text-transform: uppercase;
 }
@@ -149,7 +195,7 @@ html,body{
 .send-btn{
     height: 10vh;
     width: 100%;
-    background-color: violet;
+    background-color:rgb(32,44,51);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -157,15 +203,19 @@ html,body{
     gap: 1vmax;
 }
 button{
+    color: rgb(127, 131, 131);
     border: none;
     background-color: transparent;
 }
 button >i{
     font-size: 2vmax;
     font-weight: 700;
+    color: rgb(127, 131, 131);
+
 }
 .send-btn >i{
     font-size: 2vmax;
+    color: rgb(127, 131, 131);
     font-weight: 700;
 }
 .send-btn >input{
@@ -173,6 +223,7 @@ button >i{
     width: 100%;
     font-size: 1.1vmax;
     outline: none;
+    background-color: rgb(127, 131, 131);
     border: none;
 }
 .msg{

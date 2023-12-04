@@ -15,7 +15,7 @@
         <div class="more"><i class="ri-more-2-fill"></i></div>
         <div class="more-options">
           <ul>
-            <li>New Group</li>
+            <li><button onclick="joinroom()">New Group</button></li>
             <li>New Community</li>
             <li>Starred messages</li>
             <li>Select chats</li>
@@ -28,13 +28,25 @@
         <i class="ri-search-2-line user-serch-icon"></i>
         <input type="text" name="" placeholder="Search or start new chat" id="">
       </div>
-      <div class="usernames"></div>
+      <div class="usernames">
+        <ul>
+          <!-- <%# alluser.forEach(function(a){ %>
+            <li><%#= a.username%></li>
+            <%# }) %> -->
+            <li>
+              <div class="dps"></div>
+              <h3>yash</h3>
+            </li>
+            
+            <!-- <li>hwlo</li> -->
+        </ul>
+      </div>
     </div>
     <div class="chats">
       <div class="chat-nav">
         <div class="chatusername-dp">
-          <div class="chat-dp"></div>
-          <h3><%= user.username%></h3>
+          <div class="chat-dp"> <img src="https://img.favpng.com/15/8/8/user-profile-2018-in-sight-user-conference-expo-business-default-png-favpng-5EdhQJprgN1HKZdx50LCN4zXg.jpg" alt=""></div>
+          <h3 id="uname"><%= user.username%></h3>
         </div>
         <ul>
           <li><i class="ri-vidicon-fill"></i></li>
@@ -70,12 +82,7 @@
   <script src="/socket.io/socket.io.js"></script>
   <script>
       var socket = io();
-
-    // document.querySelector("button").addEventListener("click",function(){
-    //   var msg = document.querySelector("#newmsg").value
-    //   console.log(msg)
-    //   outgoing(msg)
-    // })
+      var roomname = null
   
     function outgoing(msg){
       document.querySelector(".messages").innerHTML += `<div class="outgoing-msg msg">
@@ -84,23 +91,23 @@
         </div>`
     }
 
-    function incoming(msg){
+    function incoming(msgpacket){
       document.querySelector(".messages").innerHTML += `<div class="incoming-msg msg">
-          <div class="username">yash datir</div>
-          <div class="msg-data">${msg}</div>
+          <div class="username">${msgpacket.username}</div>
+          <div class="msg-data">${msgpacket.msg}</div>
         </div>`
     }
-
+    var uname = document.querySelector("#uname").innerHTML
     function sendmsg(){
       var msg = document.querySelector("#newmsg").value
-      // var msgpacket = 
-      // {username: username,
-      //  msg: msg,
-      //  roomname:roomname }
+      var msgpacket = {
+       username: uname,
+       msg: msg,
+       roomname:roomname }
 
       outgoing(msg)
       document.querySelector("#newmsg").value = ""
-      socket.emit("sending" , msg)
+      socket.emit("sending" , msgpacket)
     }
 
     socket.on("resivemsg" , (msg)=>{
@@ -108,7 +115,10 @@
       incoming(msg)
     })
 
-
+    function joinroom(){
+          roomname = prompt("ENTER GROUP NAME")
+          socket.emit("joinroom" , roomname)
+        }
 
 
 

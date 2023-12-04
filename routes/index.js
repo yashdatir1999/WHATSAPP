@@ -1,16 +1,6 @@
 var express = require('express');
 var router = express.Router();
 
-// ///////////////  SOCKT io /////////////
-
-// const io = require( "socket.io" )();
-// const socketapi = {
-//     io: io
-// };
-
-// ///////////////  SOCKT io /////////////
-
-
 const USER = require("../module/usermodel")
 const passport = require("passport")
 const LocalStrategy = require("passport-local")
@@ -80,12 +70,23 @@ router.post('/checkotp/:id', async function(req, res, next) {
     const user = await USER.findById(req.params.id)
     user.loginotp = -1
     await user.save()
-    res.render("whatapp" , {user})
+    // res.render("whatapp" , {user})
+    res.redirect(`/whatapp/${req.params.id}`)
   } catch (error) {
     res.send(error)
   }
 });
 
+router.get('/whatapp/:id', async function(req, res, next) {
+  try {
+    const alluser = await USER.find()
+    console.log(alluser)
+    const user = await USER.findById(req.params.id)
+    res.render("whatapp" , {user , alluser: alluser.reverse()})
+  } catch (error) {
+    res.send(error)
+  }
+});
 
 router.get('/setting/:id', async function(req, res, next) {
   try {
@@ -96,7 +97,26 @@ router.get('/setting/:id', async function(req, res, next) {
   }
 });
 
+router.post('/update/:id', async function(req, res, next) {
+  try {
+    await USER.findByIdAndUpdate(req.params.id , {
+      mobile: req.body.mobile , 
+      username: req.body.username , 
+      email: req.body.email})
+      res.redirect(`/setting/${req.params.id}`)
+  } catch (error) {
+    res.send(error)
+  }
+});
 
+router.get('/delete/:id', async function(req, res, next) {
+  try {
+    await USER.findByIdAndDelete(req.params.id)
+    res.redirect("/")
+  } catch (error) {
+    res.send(error)
+  }
+});
 
 module.exports = router;
 

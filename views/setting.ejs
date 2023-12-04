@@ -13,7 +13,7 @@
 <div class="setting">
     <div class="setting-left">
         <div class="user-nav">
-            <div class="dp"></div>
+            <a href="/whatapp/<%= user._id%>"><div class="dp"></div></a>
             <div class="more"><i class="ri-more-2-fill"></i></div>
             <div class="more-options">
               <ul>
@@ -28,13 +28,13 @@
           </div>
 
         <div class="user-settings">
-            <form action="" method="post">
-                <input type="number" name="mobile" placeholder="ENTER MOBILE NUMBER" id="">
-                <input type="text" name="username" placeholder="ENTER USER NAME" id="">
-                <input type="email" name="email" placeholder="ENTER EMAIL-ID" id="">
+            <form action="/update/<%= user._id%>" method="post">
+                <input type="number" name="mobile" value="<%= user.mobile%>" placeholder="ENTER MOBILE NUMBER" id="">
+                <input type="text" name="username" value="<%= user.username%>" placeholder="ENTER USER NAME" id="">
+                <input type="email" name="email" value="<%= user.email%>" placeholder="ENTER EMAIL-ID" id="">
                 <button>Update</button>
                 
-                <a href="">Delete Account</a>
+                <a href="/delete/<%= user._id%>">Delete Account</a>
             </form>
         </div>  
     </div>

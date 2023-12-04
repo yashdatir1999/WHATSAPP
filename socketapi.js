@@ -11,8 +11,12 @@ io.on( "connection", function( socket ) {
 
     socket.on ("sending" , async(msg) =>{
         console.log(msg)
-        socket.broadcast.emit("resivemsg" , msg)
+        socket.broadcast.to(msg.roomname).emit("resivemsg" , msg)
     } )
+
+    socket.on("joinroom" , (roomname)=>{
+        socket.join(roomname)
+    })
 });
 // end of socket.io logic
 
