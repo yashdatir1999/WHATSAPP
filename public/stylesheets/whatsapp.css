@@ -11,13 +11,13 @@ html,body{
 .whatsapp{
     height: 100vh;
     width: 100%;
-    background-color: pink;
+    /* background-color: pink; */
     display: flex;
 }
 .users{
     height: 100vh;
     width: 30%;
-    background-color: rgb(196, 119, 145);
+    /* background-color: rgb(196, 119, 145); */
 }
 .user-nav{
     height: 10vh;
@@ -41,11 +41,12 @@ html,body{
 }
 .more-options{
     position: absolute;
-    left: 13%;
+    left: 15%;
     top: 7%;
     /* height: 45vh; */
-    width: 15vw;
-    background-color: aqua;
+    width: 13vw;
+    background-color: rgb(35,49,56);
+    /* background-color: red; */
     z-index: 10;
     display: none;
     transition: all linear 2s;
@@ -57,8 +58,22 @@ html,body{
 }
 .more-options >ul >li{
     padding-bottom: 1vmax;
+    margin-bottom: 0.5vmax;
     font-weight: 700;
     font-size: 1.1vmax;
+    color: rgba(245, 245, 245, 0.736);
+}
+.more-options >ul >li >button{
+    /* background-color: pink; */
+    font-weight: 700;
+    font-size: 1.1vmax;
+    color: rgba(245, 245, 245, 0.736);
+}
+.more-options >ul >li >a{
+    font-weight: 700;
+    font-size: 1.1vmax;
+    color: rgba(245, 245, 245, 0.736);
+    text-decoration: none;
 }
 .user-serch{
     height: 7vh;
@@ -111,7 +126,7 @@ html,body{
     border-radius: 50%;
     margin-left: 1vmax;
 }
-.usernames >ul >li >h3{
+.usernames >ul >li >h4{
     margin-left: 1vmax;
     text-transform: uppercase;
     color: rgba(245, 245, 245, 0.841);
@@ -178,6 +193,7 @@ html,body{
     width: fit-content;
     /* background-color: red; */
     font-size: 1.2vmax;
+    color:rgb(206, 219, 226);
     text-transform: uppercase;
 }
 .chat-nav >ul{
@@ -189,7 +205,7 @@ html,body{
 .messages{
     height: 80vh;
     width: 100%;
-    background-color: greenyellow;
+    background-image: url(../images/chat\ bg.png);
     padding:0.2vmax 0.5vmax;
 }
 .send-btn{
@@ -203,31 +219,36 @@ html,body{
     gap: 1vmax;
 }
 button{
-    color: rgb(127, 131, 131);
+    color: rgb(134,150,160);
     border: none;
     background-color: transparent;
 }
 button >i{
     font-size: 2vmax;
     font-weight: 700;
-    color: rgb(127, 131, 131);
+    color: rgb(134,150,160);
 
 }
 .send-btn >i{
     font-size: 2vmax;
-    color: rgb(127, 131, 131);
+    color:rgb(134,150,160);
     font-weight: 700;
 }
 .send-btn >input{
     padding: 0.8vmax;
+    padding-left: 3vmax;
     width: 100%;
     font-size: 1.1vmax;
     outline: none;
-    background-color: rgb(127, 131, 131);
+    background-color: rgb(42,57,66);
     border: none;
+    color: whitesmoke;
+}
+.send-btn >input::placeholder{
+    color: rgb(134,150,160);
 }
 .msg{
-    background-color: wheat;
+    background-color: rgb(0,92,75);
     width: fit-content;
     margin-bottom: 0.5vmax;
 }
@@ -236,12 +257,44 @@ button >i{
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 700;
     opacity: 0.7;
+    color: whitesmoke;
 }
 .msg-data{
+    color: whitesmoke;
     font-size: 1.2vmax;
     font-style: italic;
     font-family: cursive;
 }
 .outgoing-msg{
     margin-left: auto;
+}
+.emoji{
+    /* background-color: red; */
+    position: absolute;
+    left: 35.2%;
+}
+.emoji >i{
+    font-size: 1.8vmax;
+    color:rgb(134,150,160);
+
+}
+.emojes{
+    background-color: rgb(34,46,54);
+    height: 20vh;
+    width: 30vw;
+    bottom: 170%;
+    left: 35%;
+    display: none;
+    transition: all linear 0.5s;
+    position: absolute;
+    z-index: 5;
+    overflow-y: auto;
+}
+.emojes >img{
+    height: 40px;
+    width: 40px;
+    margin: 0.5vmax;
+}
+.emojes::-webkit-scrollbar{
+    display: none;
 }

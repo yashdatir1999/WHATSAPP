@@ -30,15 +30,12 @@
       </div>
       <div class="usernames">
         <ul>
-          <!-- <%# alluser.forEach(function(a){ %>
-            <li><%#= a.username%></li>
-            <%# }) %> -->
+          <% alluser.forEach(function(a){ %>
             <li>
               <div class="dps"></div>
-              <h3>yash</h3>
+              <h4><%= a.username%></h4>
             </li>
-            
-            <!-- <li>hwlo</li> -->
+            <% }) %>
         </ul>
       </div>
     </div>
@@ -68,6 +65,31 @@
       </div>
       <div class="send-btn">
         <i class="ri-add-fill"></i>
+        <div class="emoji">
+          <div class="emojes">
+            <img src="/images/icons8-couple-with-heart-woman-man-48.png" alt="">
+            <img src="/images/icons8-face-blowing-a-kiss-48.png" alt="">
+            <img src="/images/icons8-grinning-face-with-sweat-48.png" alt="">
+            <img src="/images/icons8-heart-suit-48.png" alt="">
+            <img src="/images/icons8-heart-with-arrow-48.png" alt="">
+            <img src="/images/icons8-india-48.png" alt="">
+            <img src="/images/icons8-jack-o-lantern-48.png" alt="">
+            <img src="/images/icons8-love-48 (1).png" alt="">
+            <img src="/images/icons8-love-48.png" alt="">
+            <img src="/images/icons8-love-you-gesture-medium-light-skin-tone-48.png" alt="">
+            <img src="/images/icons8-pouting-face-48.png" alt="">
+            <img src="/images/icons8-sad-but-relieved-face-48 (1).png" alt="">
+            <img src="/images/icons8-sad-but-relieved-face-48.png" alt="">
+            <img src="/images/icons8-smile-48.png" alt="">
+            <img src="/images/icons8-smiling-face-with-halo-48.png" alt="">
+            <img src="/images/icons8-smiling-face-with-hearts-48.png" alt="">
+            <img src="/images/icons8-smiling-face-with-horns-48.png" alt="">
+            <img src="/images/icons8-smiling-face-with-sunglasses-48.png" alt="">
+            <img src="/images/icons8-smirking-face-48.png" alt="">
+            <img src="/images/icons8-star-struck-48.png" alt="">
+          </div>
+          <i class="ri-emoji-sticker-line"></i>
+        </div>
         <input id="newmsg" type="text" name="" placeholder="type a message" id="">
         
           <button onclick="sendmsg()"><i class="ri-send-plane-2-fill"></i></button>
@@ -143,6 +165,18 @@ more.addEventListener("click" , function(){
         morecounter = 1
     }
 })
+
+var emojicounter = 0
+document.querySelector(".emoji").addEventListener("click",()=>{
+  if(emojicounter == 0){
+    document.querySelector(".emojes").style.display="initial"
+    emojicounter=1
+  }else{
+    document.querySelector(".emojes").style.display="none"
+    emojicounter=0
+  }
+})
+
   </script>
 
 </body>

@@ -118,6 +118,12 @@ router.get('/delete/:id', async function(req, res, next) {
   }
 });
 
+router.get('/signout', function(req, res, next) {
+  req.logout(() =>{
+    res.redirect("/")
+  })
+});
+
 module.exports = router;
 
 
