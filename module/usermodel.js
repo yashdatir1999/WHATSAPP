@@ -10,6 +10,7 @@ const user = new mongoose.Schema({
         type: Number,
         default: -1
     },
+    dp: String
 
 })
 

@@ -21,7 +21,7 @@ html,body{
 .user-nav{
     height: 10vh;
     width: 100%;
-    background-color: paleturquoise;
+    background-color: rgb(32,44,51);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -32,18 +32,29 @@ html,body{
     height: 50px;
     width: 50px;
     border-radius: 50%;
-    background-color: red;
+    /* background-color: red; */
+}
+.dp >img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
 }
 .more >i{
     font-size: 2vmax;
+    color: rgba(245, 245, 245, 0.796);
+}
+.more >i:hover{
+    color: whitesmoke;
 }
 .more-options{
     position: absolute;
-    left: 13%;
+    left: 15%;
     top: 7%;
-    /* height: 45vh; */
-    width: 15vw;
-    background-color: aqua;
+    height: 40vh;
+    width: 13vw;
+    background-color: rgb(35,49,56);
+    /* background-color: red; */
     z-index: 10;
     display: none;
     transition: all linear 2s;
@@ -55,8 +66,32 @@ html,body{
 }
 .more-options >ul >li{
     padding-bottom: 1vmax;
+    margin-bottom: 0.5vmax;
     font-weight: 700;
     font-size: 1.1vmax;
+    color: rgba(245, 245, 245, 0.736);
+    font-family: sans-serif;
+}
+.more-options >ul >li:hover{
+    color: white;
+}
+.more-options >ul >li >button{
+    /* background-color: pink; */
+    font-weight: 700;
+    font-size: 1.1vmax;
+    color: rgba(245, 245, 245, 0.736);
+}
+.more-options >ul >li >button:hover{
+    color: white;
+}
+.more-options >ul >li >a{
+    font-weight: 700;
+    font-size: 1.1vmax;
+    color: rgba(245, 245, 245, 0.736);
+    text-decoration: none;
+}
+.more-options >ul >li >a:hover{
+    color: white;
 }
 .user-settings{
     height: 90vh;
@@ -77,13 +112,14 @@ html,body{
 }
 .user-settings >form >input{
     padding: 0.5vmax;
+    padding-left: 1vmax;
     width: 100%;
     border-radius: 0.7vmax;
     border: none;
     outline: none;
     color: white;
     background-color: transparent;
-    border-bottom: 0.2vmax solid rgba(245, 245, 245, 0.786);
+    border-bottom: 0.2vmax solid rgba(245, 245, 245, 0.397);
 }
 .user-settings >form >input::placeholder{
     color: rgba(255, 255, 255, 0.737);

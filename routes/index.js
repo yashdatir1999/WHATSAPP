@@ -19,7 +19,7 @@ router.post('/signin', async function(req, res, next) {
               await USER.register({
               mobile: req.body.mobile ,
               email: req.body.email,
-              username: req.body.username
+              username: req.body.username,
             }, req.body.password)
             const newuser = await USER.findOne({mobile: req.body.mobile})
             otphendeler(req,res,newuser)
@@ -29,6 +29,7 @@ router.post('/signin', async function(req, res, next) {
   
     // res.redirect("/otp")
   } catch (error) {
+    console.log(error)
    res.send(error) 
   }
   });
@@ -102,7 +103,7 @@ router.post('/update/:id', async function(req, res, next) {
     await USER.findByIdAndUpdate(req.params.id , {
       mobile: req.body.mobile , 
       username: req.body.username , 
-      email: req.body.email})
+      email: req.body.email,})
       res.redirect(`/setting/${req.params.id}`)
   } catch (error) {
     res.send(error)

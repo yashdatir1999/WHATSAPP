@@ -18,6 +18,7 @@ html,body{
     height: 100vh;
     width: 30%;
     /* background-color: rgb(196, 119, 145); */
+    border-right: 0.2vmax solid rgb(32,44,51);
 }
 .user-nav{
     height: 10vh;
@@ -35,15 +36,25 @@ html,body{
     border-radius: 50%;
     background-color: goldenrod;
 }
+.dp >img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
 .more >i{
     font-size: 2vmax;
     color: rgba(245, 245, 245, 0.847);
+    transition: all linear 0.1s;
+}
+.more >i:hover{
+    color: whitesmoke;
 }
 .more-options{
     position: absolute;
     left: 15%;
     top: 7%;
-    /* height: 45vh; */
+    height: 40vh;
     width: 13vw;
     background-color: rgb(35,49,56);
     /* background-color: red; */
@@ -63,17 +74,26 @@ html,body{
     font-size: 1.1vmax;
     color: rgba(245, 245, 245, 0.736);
 }
+.more-options >ul >li:hover{
+    color: white;
+}
 .more-options >ul >li >button{
     /* background-color: pink; */
     font-weight: 700;
     font-size: 1.1vmax;
     color: rgba(245, 245, 245, 0.736);
 }
+.more-options >ul >li >button:hover{
+    color: white;
+}
 .more-options >ul >li >a{
     font-weight: 700;
     font-size: 1.1vmax;
     color: rgba(245, 245, 245, 0.736);
     text-decoration: none;
+}
+.more-options >ul >li >a:hover{
+    color: white;
 }
 .user-serch{
     height: 7vh;
@@ -126,6 +146,12 @@ html,body{
     border-radius: 50%;
     margin-left: 1vmax;
 }
+.dps >img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
 .usernames >ul >li >h4{
     margin-left: 1vmax;
     text-transform: uppercase;
@@ -166,6 +192,10 @@ html,body{
 }
 .chat-nav >ul >li >i{
     color: rgba(245, 245, 245, 0.736);
+    transition: all linear 0.1s;
+}
+.chat-nav >ul >li >i:hover{
+    color: whitesmoke;
 }
 .chatusername-dp{
     height: 100%;
@@ -178,7 +208,7 @@ html,body{
     height: 50px;
     width: 50px;
     border-radius: 50%;
-    background-color: red;
+    /* background-color: red; */
     margin-right: 1vmax;
     border-radius: 50%;
 }
@@ -207,6 +237,10 @@ html,body{
     width: 100%;
     background-image: url(../images/chat\ bg.png);
     padding:0.2vmax 0.5vmax;
+    overflow-y: auto;
+}
+.messages::-webkit-scrollbar{
+    display: none;
 }
 .send-btn{
     height: 10vh;
@@ -297,4 +331,16 @@ button >i{
 }
 .emojes::-webkit-scrollbar{
     display: none;
+}
+.default-msg{
+    background-color: rgba(32, 44, 51, 0.748);
+    width: 80%;
+    padding: 1vmax;
+    border-radius: 0.7vmax;
+    margin: 2vmax auto;
+    font-size: 1vmax;
+    text-align: center;
+    color: rgb(196, 179, 130);
+    font-family: sans-serif;
+    font-weight: 700;
 }
