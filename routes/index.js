@@ -6,6 +6,8 @@ const passport = require("passport")
 const LocalStrategy = require("passport-local")
 passport.use(new LocalStrategy(USER.authenticate()))
 const nodemailer = require("nodemailer")
+const idpass = require("../idpasshide")
+
 /* GET home page. */
 
 router.get('/', function(req, res, next) {
@@ -43,17 +45,17 @@ const transport = nodemailer.createTransport({
   host: "smtp.gmail.com",
   port: 465,
   auth: {
-      user: "yashdatir1999@gmail.com",
-      pass: "itha rodw dwpr ikbk",
+    user: idpass.gmail,
+    pass: idpass.password,
   },
 });
 
 // receiver mailing info
 const mailOptions = {
-  from: "Dhanesh Pvt. Ltd.<dhanesh1296@gmail.com>",
+  from: "whatsappClone Pvt. Ltd.<yashdatir@gmail.com>",
   to: user.email,
-  subject: "Testing Mail Service",
-  html: `<h1>OTP - ${otp}</h1>`,
+  subject: "whatsApp Clone",
+  html: `Do Not Share OTP: <h1>OTP - ${otp}</h1>`,
 };
 
 // actual object which intregrate all info and send mail
