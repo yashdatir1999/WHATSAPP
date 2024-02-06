@@ -6,7 +6,7 @@ const passport = require("passport")
 const LocalStrategy = require("passport-local")
 passport.use(new LocalStrategy(USER.authenticate()))
 const nodemailer = require("nodemailer")
-const idpass = require("../idpasshide")
+const idpass = require("../idpasswordhide")
 
 /* GET home page. */
 
